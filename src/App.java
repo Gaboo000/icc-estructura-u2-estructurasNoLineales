@@ -1,9 +1,14 @@
+import java.util.List;
+
+import Main.Ejercicio_03_listLevels.ListLevels;
 import Main.Materia.Controllers.ArbolBinario;
 import Main.Materia.Controllers.ArbolRecorridos;
+import Main.Materia.Models.Node;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        runArbolBinario();
+        //runArbolBinario();
+        runEjercicio3();
     }
     public static void runArbolBinario(){
         ArbolBinario arbolBinario = new ArbolBinario();
@@ -26,12 +31,34 @@ public class App {
 
         System.out.println("\nRecorrido PosOrder Recursivo");
         arbolRecorrido.postOrderRecursivo(arbolBinario.getRoot());
-
-        
-
-        
     }
+    
+    public static void runEjercicio3(){
+        ArbolBinario arbolBinario = new ArbolBinario();
+        ListLevels levels = new ListLevels();
+        int[] valores = { 4, 2, 7, 1, 3, 6, 9 };
 
+        // Insertar valores en el árbol binario
+        for (int valor : valores) {
+            arbolBinario.insert(valor);
+        }
+
+        // Imprimir el árbol binario
+        arbolBinario.printTree();
+
+        // Obtener lista de niveles
+        List<List<Node>> lista = levels.listLevels(arbolBinario.getRoot());
+
+        // Imprimir los niveles
+        System.out.println("Niveles del árbol:");
+        for (int i = 0; i < lista.size(); i++) {
+            System.out.print("Nivel " + i + ": ");
+            for (Node node : lista.get(i)) {
+                System.out.print(node.getValue() + " ");
+            }
+            System.out.println();
+        }
+    }
 
 }
  
