@@ -9,7 +9,7 @@ import Main.Materia.Models.Node;
 
 public class ListLevels {
 
-   List<List<Node>> result = new ArrayList<>(){
+   /*List<List<Node>> result = new ArrayList<>(){
         // Si el árbol está vacío, retorna una lista vacía
         if (root == null) {
             return result;
@@ -41,6 +41,6 @@ public class ListLevels {
         }
 
         return result;
-    }
+    }*/
     
 }
