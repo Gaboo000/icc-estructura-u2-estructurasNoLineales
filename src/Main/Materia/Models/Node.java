@@ -6,7 +6,7 @@ public class Node {
     private Node right;
     private int height;
     private int balance;
-
+    
 
     public Node(int value) {
         this.value = value;
@@ -60,6 +60,17 @@ public class Node {
     public void setBalance(int balance) {
         this.balance = balance;
     }
+
+
+    public void addNeighbor(Node dest) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'addNeighbor'");
+    }
+
+
+    
+
+    
 
     
     

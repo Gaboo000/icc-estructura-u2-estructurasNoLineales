@@ -1,16 +1,14 @@
-import java.util.List;
-
-import Main.Ejercicio_03_listLevels.ListLevels;
 import Main.Materia.Controllers.ArbolAVL;
 import Main.Materia.Controllers.ArbolBinario;
 import Main.Materia.Controllers.ArbolRecorridos;
-import Main.Materia.Models.Node;
+import Main.Materia.Controllers.Graph;
 
 public class App {
     public static void main(String[] args) throws Exception {
         //runArbolBinario();
         //runEjercicio3();
-        runArbolAvl();
+        //runArbolAvl();
+        runGraph();
     }
     public static void runArbolBinario(){
         ArbolBinario arbolBinario = new ArbolBinario();
@@ -71,6 +69,17 @@ public class App {
         }
 
         arbolAVL.printTree();
+    }
+
+    private static void runGraph(){
+        Graph grafo = new Graph();
+        grafo.addNode(5);
+        grafo.addNode(7);
+        grafo.addNode(9);
+        grafo.addNode(11);
+        grafo.addNode(3);
+
+        grafo.printGraph();
     }
 
 }
