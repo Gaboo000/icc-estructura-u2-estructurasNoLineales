@@ -1,7 +1,10 @@
+import org.w3c.dom.Node;
+
 import Main.Materia.Controllers.ArbolAVL;
 import Main.Materia.Controllers.ArbolBinario;
 import Main.Materia.Controllers.ArbolRecorridos;
 import Main.Materia.Controllers.Graph;
+import Main.Materia.Models.NodeGraph;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -73,13 +76,48 @@ public class App {
 
     private static void runGraph(){
         Graph grafo = new Graph();
+        NodeGraph node0 = grafo.addNode(0);
+        NodeGraph node1 = grafo.addNode(1);
+        NodeGraph node2 = grafo.addNode(2);
+        NodeGraph node3 = grafo.addNode(3);
+        NodeGraph node4 = grafo.addNode(4);
+        NodeGraph node5 = grafo.addNode(5);
+
+        grafo.addEdgeUni(node0, node5);
+        grafo.addEdgeUni(node0, node3);
+        grafo.addEdgeUni(node3, node2);
+        grafo.addEdgeUni(node3, node4);
+        grafo.addEdgeUni(node2, node1);
+
+
+        grafo.addEdgeUni(node1, node0);
+
+
+
+        //grafo.addEdge(node1, node2);
+
+
+
         grafo.addNode(5);
         grafo.addNode(7);
         grafo.addNode(9);
         grafo.addNode(11);
         grafo.addNode(3);
 
+        grafo.getDFS(node0);
+        grafo.getBFS(node0);
+
+
+
+
+
+
+
         grafo.printGraph();
+
+
+
+
     }
 
 }
